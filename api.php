@@ -5,7 +5,6 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BrandApiController;
 use App\Http\Controllers\CategoryApiController;
-use App\Http\Controllers\ProductApiController;
 use Spatie\FlareClient\Api;
 
 /*
@@ -31,9 +30,5 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::resource('/brand', BrandApiController::class);
 Route::get('/brand/search/{name}', [BrandApiController::class,'search']);
-
 Route::resource('/category', CategoryApiController::class);
 Route::get('/category/search/{name}', [CategoryApiController::class,'search']);
-
-Route::resource('/products', ProductApiController::class);
-Route::get('/products/search/{name}', [ProductApiController::class,'search']);
